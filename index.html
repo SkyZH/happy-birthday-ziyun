@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>3D lines animation with three.js</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            background-color: #fff;
+            margin: 0px;
+            overflow: hidden;
+            font-family: arial;
+            color: #fff;
+            height: 100%;
+        }
+
+        h1 {
+            margin: 0;
+            font-family: "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+        }
+
+        a {
+            color: #0078ff;
+        }
+
+        #canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            overflow: hidden;
+            background-color: #1a1724;
+            display: table-cell;
+        }
+
+        #floater {
+            float: left;
+            height: 50%;
+            margin-bottom: -90px;
+            display: block;
+        }
+        @keyframes blink {
+            0% {
+                transform: scale(.95);
+            }
+            100% {
+                transform: scale(1.05);
+            }
+        }
+        #content {
+            clear: both;
+            height: 180px;
+            width: 600px;
+            position: relative;
+            color: #fff;
+            text-align: center;
+            margin: auto;
+            z-index: 700;
+        }
+
+        .animated {
+            animation-name: blink;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            animation-timing-function: ease-in-out;
+        }
+
+        .splitter {
+            display: block;
+            height: 3px;
+            width: 400px;
+            background-color: #fff;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="floater"></div>
+    <div id="content" class="animated">
+        <h1><i class="fa fa-birthday-cake" aria-hidden="true"></i> HAPPY BIRTHDAY <i class="fa fa-birthday-cake" aria-hidden="true"></i></h1>
+        <div class="splitter"></div>
+        <h2>子云酱又老了一岁啦hhh 老了一岁也敲可爱qwq</h2>
+        <h3>最喜欢子云了——来自痴汉夜喵喵</h3>
+    </div>
+    <div id="canvas" class="gradient"></div>
+
+    <!-- Main library -->
+    <script src="js/three.min.js"></script>
+
+    <!-- Helpers -->
+    <script src="js/projector.js"></script>
+    <script src="js/canvas-renderer.js"></script>
+
+    <!-- Visualitzation adjustments -->
+    <script src="js/3d-lines-animation.js"></script>
+
+    <!-- Animated background color -->
+    <script src="//cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+    <script src="js/color.js"></script>
+
+</body>
+
+</html>
